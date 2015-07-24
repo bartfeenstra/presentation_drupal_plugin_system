@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>The Drupal 8 plugin system: extensibility for all</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -36,350 +36,161 @@
             .reveal {
                 font-size: 30px;
             }
+            p.attribution {
+                bottom: 5%;
+                display: none;
+                font-size: 0.5em;
+                left: 5%;
+                padding: 1em;
+                position: absolute;
+                z-index: 999;
+            }
+            .attribution-active p.attribution {
+                display: block;
+            }
+            .contrast {
+                background-color: rgba(0,0,0,0.7);
+            }
         </style>
 	</head>
 
 	<body>
 
 		<div class="reveal">
-
+            <p class="attribution contrast"></p>
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
+                <section>
+                    <h1>The Drupal 8 plugin system: extensibility for all</h1>
+                    <p>DrupalCamp North 2015</p>
+                </section>
+                <section class="contrast" data-background="./images/socket.jpg" data-state="attribution-active socket">
+                    <style>.socket .attribution:after { content: "idea-saras @ Flickr"; }</style>
+                    <h1>What are plugins?</h1>
+                    <ul>
+                        <li class="fragment">Swappable extensions that provide logic for a specific (set of) task(s)</li>
+                        <li class="fragment">Uniquely identifiable & metadata</li>
+                        <li class="fragment">Multiple instances can co-exist (reuse)</li>
+                    </ul>
+                </section>
+                <section class="contrast" data-background="./images/druplicon.svg">
+                    <h1>Drupal 7 plugins</h1>
+                    <ul>
+                        <li class="fragment">Hook discovery (core and most contributed modules)</li>
+                        <li class="fragment">File-based discovery (ctools)</li>
+                        <li class="fragment">Magic hooks/callbacks</li>
+                        <li class="fragment">Magic file includes</li>
+                        <li class="fragment">Some plugins are classes</li>
+                    </ul>
+                </section>
+                <section data-background="./images/confusion.jpg" data-state="attribution-active confusion">
+                    <style>.confusion .attribution:after { content: "mn_francis @ Flickr"; }</style>
+                    <h1 class="contrast">Say what?</h1>
+                </section>
+                <section class="contrast" data-background="./images/drupal-8.svg">
+                    <h1>Drupal 8 plugins</h1>
+                    <ul>
+                        <li class="fragment">Are classes. Always.</li>
+                        <li class="fragment">Should implement interfaces.</li>
+                        <li class="fragment">Consistent API for discovering and instantiating plugins, regardless of type.</li>
+                    </ul>
+                </section>
+                <section data-background="./images/evil-wizard.jpg" data-state="attribution-active evil-wizard">
+                    <style>.evil-wizard .attribution:after { content: "julochka @ Flickr"; }</style>
+                    <h1 class="contrast">No more dark magic</h1>
+                </section>
+                <section>
+                    <section data-background="./images/jargon.jpg" data-state="attribution-active jargon">
+                        <style>.jargon .attribution:after { content: "subsetsum @ Flickr"; }</style>
+                        <h1 class="contrast">Jargon, do you speak it?</h1>
+                    </section>
+                    <section data-background="./images/type.jpg" data-state="attribution-active type">
+                        <style>.type .attribution:after { content: "tunruh @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin type</h1>
+                    </section>
+                    <section data-background="./images/definition.jpg" data-state="attribution-active definition">
+                        <style>.definition .attribution:after { content: "jwyg @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin (definition)</h1>
+                    </section>
+                    <section data-background="./images/discovery.jpg" data-state="attribution-active discovery">
+                        <style>.discovery .attribution:after { content: "skynoir @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin discovery</h1>
+                    </section>
+                    <section data-background="./images/factory.jpg" data-state="attribution-active factory">
+                        <style>.factory .attribution:after { content: "spenceyc @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin factory</h1>
+                    </section>
+                    <section data-background="./images/toolbox.jpg" data-state="attribution-active toolbox">
+                        <style>.toolbox .attribution:after { content: "jlgriffiths @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin manager (discovery + factory + ...)</h1>
+                    </section>
+                    <section data-background="./images/uncommon-objects.jpg" data-state="attribution-active uncommon-objects">
+                        <style>.uncommon-objects .attribution:after { content: "johnymutton @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin instance</h1>
+                    </section>
+                    <section data-background="./images/clockwork.jpg" data-state="attribution-active clockwork">
+                        <style>.clockwork .attribution:after { content: "guysie @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin configuration</h1>
+                        <p></p>
+                    </section>
+                </section>
+                <section class="contrast" data-background="./images/recreate.jpg" data-state="attribution-active recreate">
+                    <style>.recreate .attribution:after { content: "capedcrusader @ Flickr"; }</style>
+                    <h1 >Recreating/cloning plugin instances</h1>
+                    <p>Using Plugin type/manager, ID, and configuration through <code>ConfigurablePluginInterface</code>.</p>
+                </section>
+                <section class="contrast" data-background="./images/discovery-2.jpg" data-state="attribution-active discovery">
+                    <style>.discovery .attribution:after { content: "skynoir @ Flickr"; }</style>
+                    <h1>Discovery methods</h1>
+                    <ul>
+                        <li class="fragment">Annotated class discovery</li>
+                        <li class="fragment">YAML discovery</li>
+                        <li class="fragment">Static discovery (testing)</li>
+                        <li class="fragment">Hook discovery (deprecated)</li>
+                    </ul>
+                </section>
+                <section data-background="./images/paperwork.jpg" data-state="attribution-active paperwork">
+                    <style>.paperwork .attribution:after { content: "bourgeoisbee @ Flickr"; }</style>
+                    <h1 class="contrast">Forms</h1>
+                </section>
+                <section>
+                    <section class="contrast" data-background="./images/soyuz.jpg" data-state="attribution-active soyuz">
+                        <style>.soyuz .attribution:after { content: "nasa2explore @ Flickr"; }</style>
+                        <h1>There's a module for that</h1>
+                        <p><a href="http://drupal.org/project/plugin">http://drupal.org/project/plugin</a></p>
+                    </section>
+                    <section data-background="./images/type-2.jpg" data-state="attribution-active type-2">
+                        <style>.type-2 .attribution:after { content: "vpickering @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin type discovery</h1>
+                    </section>
+                    <section data-background="./images/aerial-view.jpg" data-state="attribution-active aerial-view">
+                        <style>.aerial-view .attribution:after { content: "ter-burg @ Flickr"; }</style>
+                        <h1 class="contrast">Administrative overview</h1>
+                    </section>
+                    <section data-background="./images/tube-map.jpg" data-state="attribution-active tube-map">
+                        <style>.tube-map .attribution:after { content: "24736216@N07 @ Flickr"; }</style>
+                        <h1 class="contrast">Configuration schemas</h1>
+                    </section>
+                    <section data-background="./images/funnel.jpg" data-state="attribution-active funnel">
+                        <style>.funnel .attribution:after { content: "fdctsevilla @ Flickr"; }</style>
+                        <h1 class="contrast">Typed plugin definition API</h1>
+                    </section>
+                    <section data-background="./images/cursor.jpg" data-state="attribution-active cursor">
+                        <style>.cursor .attribution:after { content: "86530412@N02 @ Flickr"; }</style>
+                        <h1 class="contrast">Plugin selectors</h1>
+                    </section>
+                    <section data-background="./images/wheat-field.jpg" data-state="attribution-active wheat-field">
+                        <style>.wheat-field .attribution:after { content: "jaako @ Flickr"; }</style>
+                        <h1 class="contrast">Field types/widgets/formatters</h1>
+                    </section>
+                </section>
+                <section>
+                    <h1>Conclusion</h1>
+                    <h2>Extending Drupal has never been easier.</h2>
+                    <p class="fragment">Find this presentation at <a href="http://slideshare.net/bartfeenstra">http://slideshare.net/bartfeenstra</a>.</p>
+                    <p class="fragment">Find me at <a href="http://twitter.com/bartfeenstra">@BartFeenstra</a> and <a href="http://mynameisbart.com">http://mynameisbart.com</a>.</p>
+                    <h2 class="fragment">Do you have any questions?</h2>
+                </section>
 			</div>
 
 		</div>
