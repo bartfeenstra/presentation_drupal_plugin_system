@@ -151,6 +151,32 @@
                         <li class="fragment">Hook discovery (deprecated)</li>
                     </ul>
                 </section>
+                <section>
+                    <h1>Annotated class discovery</h1>
+                        <pre>
+                        <code>
+&lt;?php
+/**
+ * The plugin that handles Data response callbacks for REST resources.
+ *
+ * @ingroup views_display_plugins
+ *
+ * @ViewsDisplay(
+ *   id = "rest_export",
+ *   title = @Translation("REST export"),
+ *   help = @Translation("Create a REST export resource."),
+ *   uses_route = TRUE,
+ *   admin = @Translation("REST export"),
+ *   returns_response = TRUE
+ * )
+ */
+class RestExport extends PathPluginBase implements ResponseDisplayPluginInterface {
+    // Class contents here...
+}
+?&gt;
+                    </code>
+                    </pre>
+                </section>
                 <section data-background="./images/paperwork.jpg" data-state="attribution-active paperwork">
                     <style>.paperwork .attribution:after { content: "© bourgeoisbee @ Flickr (CC BY-NC 2.0)"; }</style>
                     <h1 class="contrast">Forms</h1>
@@ -215,7 +241,7 @@
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: false,
-				progress: false,
+				progress: true,
 				history: true,
 				center: true,
 
