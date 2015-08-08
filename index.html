@@ -151,7 +151,8 @@
                         <li class="fragment">Hook discovery (deprecated)</li>
                     </ul>
                 </section>
-                <section>
+                <section class="contrast" data-background="./images/post-its.jpg" data-state="attribution-active post-its">
+                    <style>.post-its .attribution:after { content: "© ableman @ Flickr (CC BY-NC-ND 2.0)"; }</style>
                     <h1>Annotated class discovery</h1>
                         <pre>
                         <code>
@@ -174,6 +175,31 @@ class RestExport extends PathPluginBase implements ResponseDisplayPluginInterfac
     // Class contents here...
 }
 ?&gt;
+                    </code>
+                    </pre>
+                </section>
+                <section class="contrast" data-background="./images/sunrise.jpg" data-state="attribution-active sunrise">
+                    <style>.sunrise .attribution:after { content: "© matthiasb2009 @ Flickr (CC BY-SA 2.0)"; }</style>
+                    <h1>YAML discovery</h1>
+                        <pre>
+                        <code>
+system.admin:
+  title: Administration
+  route_name: system.admin
+  weight: 9
+  menu_name: admin
+system.admin_content:
+  title: Content
+  description: 'Find and manage content.'
+  route_name: system.admin_content
+  parent: system.admin
+  weight: -10
+system.admin_structure:
+  route_name: system.admin_structure
+  parent: system.admin
+  description: 'Administer blocks, content types, menus, etc.'
+  title: Structure
+  weight: -8
                     </code>
                     </pre>
                 </section>
