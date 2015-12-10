@@ -218,9 +218,18 @@ system.admin_structure:
                         <h1>There's a module for that</h1>
                         <p><a href="http://drupal.org/project/plugin">http://drupal.org/project/plugin</a></p>
                     </section>
-                    <section data-background="./images/type-2.jpg" data-state="attribution-active type-2">
+                    <section class="contrast" data-background="./images/type-2.jpg" data-state="attribution-active type-2">
                         <style>.type-2 .attribution:after { content: "© vpickering @ Flickr (CC BY-NC-ND 2.0)"; }</style>
-                        <h1 class="contrast">Plugin type discovery</h1>
+                        <h1>Plugin type discovery</h1>
+                        <p><code>$module.plugin_type.yml</code></p>
+                        <pre>
+                        <code>
+plugin_selector:
+    label: Plugin selector
+    plugin_manager_service_id: plugin.manager.plugin.plugin_selector
+    plugin_definition_decorator_class: \Drupal\plugin\PluginDefinition\ArrayPluginDefinitionDecorator
+                        </code>
+                    </pre>
                     </section>
                     <section data-background="./images/aerial-view.jpg" data-state="attribution-active aerial-view">
                         <style>.aerial-view .attribution:after { content: "© ter-burg @ Flickr (CC BY-SA 2.0)"; }</style>
