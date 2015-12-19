@@ -241,7 +241,20 @@ plugin_selector:
                     <section class="contrast" data-background="./images/tube-map.jpg" data-state="attribution-active tube-map">
                         <style>.tube-map .attribution:after { content: "© 24736216@N07 @ Flickr ((CC BY-SA 2.0)"; }</style>
                         <h1>Configuration schemas</h1>
-                        <p><code>plugin.plugin_configuration.*.*</code></p>
+                        <div class="fragment">
+                            <h2>Recommended default name</h2>
+                            <p><code>plugin.plugin_configuration.*.*</code></p>
+                        </div>
+                        <div class="fragment">
+                            <h2>Custom name</h2>
+                            <p>in <code>$module.plugin_type.yml</code>:
+                                <pre><code>
+plugin_selector:
+    label: Plugin selector
+    plugin_configuration_schema_id: block.settings.[plugin_id]
+                                </code></pre>
+                            </p>
+                        </div>
                     </section>
                     <section class="contrast" data-background="./images/funnel.jpg" data-state="attribution-active funnel">
                         <style>.funnel .attribution:after { content: "© fdctsevilla @ Flickr (CC BY 2.0)"; }</style>
